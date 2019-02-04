@@ -15,10 +15,6 @@ class String
   end
 
   def count_sentences
-    if self.scan(/[[:punct:]]/).count > 4
-   self.scan(/[[:punct:]]/).uniq.count
-  else 
-   self.scan(/[[:punct:]]/).count
- end
+   self.split.count {|x| x.to_s.end_with?("?","!",".")}
   end
 end
